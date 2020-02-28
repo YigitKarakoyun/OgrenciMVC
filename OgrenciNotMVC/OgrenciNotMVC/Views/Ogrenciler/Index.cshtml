@@ -1,0 +1,43 @@
+﻿@using OgrenciNotMVC.Models.EntityFramework;
+@model List<TBLOGRENCILER>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="btn-info" style="text-align:center">ÖĞRENCİ LİSTESİ</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ÖĞRENCİ ID</th>
+        <th>ADI</th>
+        <th>SOYADI</th>
+        <th>CİNSİYET</th>
+        <th>KULÜP</th>
+    </tr>
+    <tbody>
+        @try
+        {
+            foreach (var item in @Model)
+            {
+                <tr>
+                    <td>@item.OGRENCIID</td>
+                    <td>@item.OGRAD</td>
+                    <td>@item.OGRSOYAD</td>
+                    <td>@item.OGRCINSIYET</td>
+                    <td>@item.OGRKULUP</td>
+                </tr>
+            }
+        }
+        catch (Exception ex)
+        {
+
+            <tr>
+                <th>Burası model kutucuğu @Model</th>
+                <th> Hata:  <span style="color:red"> @ex.Message</span></th>
+            </tr>
+        }
+    </tbody>
+
+</table>

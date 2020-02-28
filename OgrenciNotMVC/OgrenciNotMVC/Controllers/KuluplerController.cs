@@ -6,14 +6,14 @@ using System.Web.Mvc;
 using OgrenciNotMVC.Models.EntityFramework;
 namespace OgrenciNotMVC.Controllers
 {
-    public class DefaultController : Controller
+    public class KuluplerController : Controller
     {
-        // GET: Default
+        // GET: Kulupler
         DbMvcOkulEntities db = new DbMvcOkulEntities();
         public ActionResult Index()
         {
-            var dersler = db.TBLDERSLER.ToList();
-            return View(dersler);
+            var kulupler = db.TBLKULUPLER.ToList();
+            return View(kulupler);
         }
     }
 }

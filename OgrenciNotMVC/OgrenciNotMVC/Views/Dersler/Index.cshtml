@@ -1,10 +1,11 @@
-﻿@using System.Data.SqlClient;
-@using OgrenciNotMVC.Models.EntityFramework;
+﻿@using OgrenciNotMVC.Models.EntityFramework;
 @model List<TBLDERSLER>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<h1 class="btn-info" style="text-align:center">DERSLER</h1>
 
 <table class="table table-bordered">
     <tr>
@@ -14,11 +15,12 @@
     <tbody>
         @try
         {
-            foreach (var ders in @Model)
+            foreach (var item in @Model)
             {
                 <tr>
-                    <td>@ders.DERSID</td>
-                    <td>@ders.DERSAD</td>
+                    <td>@item.DERSID</td>
+                    <td>@item.DERSAD</td>
+
                 </tr>
             }
         }
@@ -31,5 +33,5 @@
             </tr>
         }
     </tbody>
-   
+
 </table>

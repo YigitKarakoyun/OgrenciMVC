@@ -10,8 +10,7 @@
 namespace OgrenciNotMVC.Models.EntityFramework
 {
     using System;
-    using System.Collections.Generic;
-    
+
     public partial class TBLNOTLAR
     {
         public int NOTID { get; set; }
@@ -23,7 +22,7 @@ namespace OgrenciNotMVC.Models.EntityFramework
         public Nullable<byte> PROJE { get; set; }
         public Nullable<decimal> ORTALAMA { get; set; }
         public Nullable<bool> DURUM { get; set; }
-    
+
         public virtual TBLDERSLER TBLDERSLER { get; set; }
         public virtual TBLOGRENCILER TBLOGRENCILER { get; set; }
     }

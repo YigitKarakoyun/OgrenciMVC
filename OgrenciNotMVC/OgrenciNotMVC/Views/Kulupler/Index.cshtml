@@ -1,0 +1,75 @@
+﻿@using System.Data.SqlClient;
+@using System.Configuration;
+@using OgrenciNotMVC.Models.EntityFramework;
+@model List<TBLKULUPLER>
+@{
+    ViewBag.Title = "Kulupler";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h1 class="btn-info" style="text-align:center">KULÜPLER</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>KULUP ID</th>
+        <th>KULUP ADI</th>
+    </tr>
+    <tbody>
+        @try
+        {
+            foreach (var item in @Model)
+            {
+                <tr>
+                    <td>@item.KULUPID</td>
+                    <td>@item.KULUPAD</td>
+
+                </tr>
+            }
+        }
+        catch (Exception ex)
+        {
+
+            <tr>
+                <th>Burası model kutucuğu @Model</th>
+                <th> Hata:  <span style="color:red"> @ex.Message</span></th>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+@*@{
+    SqlConnection conn = new SqlConnection();
+    conn.ConnectionString = "data source=localhost;initial catalog=DbMvcOkul;integrated security=True;";
+    if (conn.State != System.Data.ConnectionState.Open)
+    {
+        conn.Open();
+        SqlCommand comm = new SqlCommand();
+        comm.Connection = conn;
+        comm.CommandText = "Select * from TBLKULUPLER";
+
+        SqlDataReader dr = comm.ExecuteReader();
+
+        <table class="table table-bordered">
+            <tr>
+                <th>KULÜP IDLERİ</th>
+                <th>KULÜP ADLARI</th>
+            </tr>
+            @while (dr.Read())
+            {
+                <tr>
+                    <td>@dr["KULUPID"]</td>
+                    <td>@dr["KULUPAD"]</td>
+                
+                </tr>
+            }
+
+
+
+        </table>
+    }*@
+
+
+
+
