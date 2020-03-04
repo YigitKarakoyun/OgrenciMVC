@@ -1,9 +1,7 @@
-﻿using System;
+﻿using OgrenciNotMVC.Models.EntityFramework;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using OgrenciNotMVC.Models.EntityFramework;
 namespace OgrenciNotMVC.Controllers
 {
     public class OgrencilerController : Controller
@@ -30,9 +28,12 @@ namespace OgrenciNotMVC.Controllers
         [HttpPost]
         public ActionResult YeniOgrenci(TBLOGRENCILER p3)
         {
+            var klp = db.TBLKULUPLER.Where(m=>m.KULUPID==p3.TBLKULUPLER.KULUPID).FirstOrDefault();
+            p3.TBLKULUPLER = klp;
+
             db.TBLOGRENCILER.Add(p3);
             db.SaveChanges();
-            return View();
+            return  RedirectToAction("Index");
         }
         //List<SelectListItem> items = new List<SelectListItem>();
         //items.Add(new SelectListItem { Text = "Matematik", Value = "0" });
