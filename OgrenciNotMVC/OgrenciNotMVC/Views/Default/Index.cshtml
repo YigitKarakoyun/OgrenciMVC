@@ -10,6 +10,7 @@
     <tr>
         <th>DERS ID</th>
         <th>DERS ADI</th>
+        <th>İŞLEMLER</th>
     </tr>
     <tbody>
         @try
@@ -19,6 +20,10 @@
                 <tr>
                     <td>@ders.DERSID</td>
                     <td>@ders.DERSAD</td>
+                    <td>
+                        <a href="/Default/Sil/@ders.DERSID" class="btn btn-danger">Sil</a>
+                        <a href="/Default/Guncelle/@ders.DERSID" class="btn btn-success">Güncelle</a>
+                    </td>
                 </tr>
             }
         }
@@ -31,7 +36,7 @@
             </tr>
         }
     </tbody>
-   
+
 </table>
 
-<a href="/Default/YeniDers" class="btn btn-primary" >Yeni Ders Kaydı</a>
+<a href="/Default/YeniDers" class="btn btn-primary">Yeni Ders Kaydı</a>

@@ -14,6 +14,7 @@
     <tr>
         <th>KULUP ID</th>
         <th>KULUP ADI</th>
+        <th>İŞLEMLER</th>
     </tr>
     <tbody>
         @try
@@ -23,7 +24,10 @@
                 <tr>
                     <td>@item.KULUPID</td>
                     <td>@item.KULUPAD</td>
-
+                    <td>
+                    <a href="/Kulupler/Sil/@item.KULUPID" class="btn btn-danger">Sil</a>
+                    <a href="/Kulupler/Guncelle/@item.KULUPID" class="btn btn-success">Güncelle</a>
+                    </td>
                 </tr>
             }
         }

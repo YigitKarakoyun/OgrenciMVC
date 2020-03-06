@@ -29,5 +29,14 @@ namespace OgrenciNotMVC.Controllers
             db.SaveChanges();
             return View();
         }
+
+        //[HttpGet]
+        public ActionResult Sil(int id)
+        {
+            TBLDERSLER item = db.TBLDERSLER.Find(id);
+            db.TBLDERSLER.Remove(item);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

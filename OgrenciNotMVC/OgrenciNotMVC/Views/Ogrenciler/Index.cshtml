@@ -15,19 +15,24 @@
         <th>SOYADI</th>
         <th>CİNSİYET</th>
         <th>KULÜP</th>
+        <th>İŞLEMLER</th>
     </tr>
     <tbody>
         @try
         {
             foreach (var item in @Model)
             {
-                <tr>
-                    <td>@item.OGRENCIID</td>
-                    <td>@item.OGRAD</td>
-                    <td>@item.OGRSOYAD</td>
-                    <td>@item.OGRCINSIYET</td>
-                    <td>@item.OGRKULUP</td>
-                </tr>
+        <tr>
+            <td>@item.OGRENCIID</td>
+            <td>@item.OGRAD</td>
+            <td>@item.OGRSOYAD</td>
+            <td>@item.OGRCINSIYET</td>
+            <td>@item.OGRKULUP</td>
+            <td>
+                <a href="/Ogrenciler/Sil/@item.OGRENCIID" class="btn btn-danger">Sil</a>
+                <a href="/Ogrenciler/Guncelle/@item.OGRENCIID" class="btn btn-success">Güncelle</a>
+            </td>
+        </tr>
             }
         }
         catch (Exception ex)

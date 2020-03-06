@@ -35,6 +35,13 @@ namespace OgrenciNotMVC.Controllers
             db.SaveChanges();
             return  RedirectToAction("Index");
         }
+        public ActionResult Sil(int id)
+        {
+            TBLOGRENCILER ogr = db.TBLOGRENCILER.Find(id);
+            db.TBLOGRENCILER.Remove(ogr);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
         //List<SelectListItem> items = new List<SelectListItem>();
         //items.Add(new SelectListItem { Text = "Matematik", Value = "0" });
         //    items.Add(new SelectListItem { Text = "Fen Bilgisi", Value = "1" });

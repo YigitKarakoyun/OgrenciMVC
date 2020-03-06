@@ -17,6 +17,7 @@
         <th>SINAV3</th>
         <th>ORTALAMA</th>
         <th>DURUM</th>
+        <th>GÜNCELLE</th>
     </tr>
     <tbody>
         @try
@@ -32,6 +33,9 @@
             <td>@item.SINAV3</td>
             <td>@item.ORTALAMA</td>
             <td>@item.DURUM</td>
+            <td>
+                <a href="/Notlar/Guncelle/@item.NOTID" class="btn btn-warning">Güncelle</a>
+            </td>
         </tr>
             }
         }
