@@ -1,29 +1,26 @@
-﻿@using System.Data.SqlClient;
-@using OgrenciNotMVC.Models.EntityFramework;
+﻿@using OgrenciNotMVC.Models.EntityFramework;
 @model List<TBLDERSLER>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <h1 class="btn-info" style="text-align:center">ÖĞRENCİ DERSLERİ</h1>
+
 <table class="table table-bordered">
     <tr>
         <th>DERS ID</th>
         <th>DERS ADI</th>
-        <th>İŞLEMLER</th>
     </tr>
     <tbody>
         @try
         {
-            foreach (var ders in @Model)
+            foreach (var item in @Model)
             {
                 <tr>
-                    <td>@ders.DERSID</td>
-                    <td>@ders.DERSAD</td>
-                    <td>
-                        <a href="/Default/Sil/@ders.DERSID" class="btn btn-danger">Sil</a>
-                        <a href="/Default/Guncelle/@ders.DERSID" class="btn btn-success">Güncelle</a>
-                    </td>
+                    <td>@item.DERSID</td>
+                    <td>@item.DERSAD</td>
+
                 </tr>
             }
         }
@@ -38,5 +35,3 @@
     </tbody>
 
 </table>
-
-<a href="/Default/YeniDers" class="btn btn-primary">Yeni Ders Kaydı</a>

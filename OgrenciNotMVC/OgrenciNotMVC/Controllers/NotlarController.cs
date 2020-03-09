@@ -28,12 +28,6 @@ namespace OgrenciNotMVC.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
-        public ActionResult NotGetir(int id)
-        {
-            var notlar = db.TBLNOTLAR.Find(id);
-            return View("NotGetir", notlar);
-        }
     }
 
 }

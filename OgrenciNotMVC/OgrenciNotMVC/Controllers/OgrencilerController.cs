@@ -42,11 +42,6 @@ namespace OgrenciNotMVC.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-        public ActionResult OgrenciGetir(int id)
-        {
-            var ogrenci = db.TBLOGRENCILER.Find(id);
-            return View("OgrenciGetir",ogrenci);
-        }
         //List<SelectListItem> items = new List<SelectListItem>();
         //items.Add(new SelectListItem { Text = "Matematik", Value = "0" });
         //    items.Add(new SelectListItem { Text = "Fen Bilgisi", Value = "1" });
