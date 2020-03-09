@@ -130,7 +130,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
-    <Compile Include="Controllers\DerslerController.cs" />
     <Compile Include="Controllers\HesapTestController.cs" />
     <Compile Include="Controllers\KuluplerController.cs" />
     <Compile Include="Controllers\NotlarController.cs" />
@@ -583,7 +582,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Default\Index.cshtml" />
     <Content Include="Views\Kulupler\Index.cshtml" />
-    <Content Include="Views\Dersler\Index.cshtml" />
     <Content Include="Views\Ogrenciler\Index.cshtml" />
     <Content Include="Views\Notlar\Index.cshtml" />
     <Content Include="Views\Default\YeniDers.cshtml" />
@@ -591,6 +589,10 @@
     <Content Include="Views\Ogrenciler\YeniOgrenci.cshtml" />
     <Content Include="Views\Notlar\YeniSinav.cshtml" />
     <Content Include="Views\HesapTest\Index.cshtml" />
+    <Content Include="Views\Kulupler\KulupGetir.cshtml" />
+    <Content Include="Views\Default\DersGetir.cshtml" />
+    <Content Include="Views\Ogrenciler\OgrenciGetir.cshtml" />
+    <Content Include="Views\Notlar\NotGetir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
