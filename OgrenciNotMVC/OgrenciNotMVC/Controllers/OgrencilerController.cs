@@ -45,6 +45,14 @@ namespace OgrenciNotMVC.Controllers
         public ActionResult OgrenciGetir(int id)
         {
             var ogrenci = db.TBLOGRENCILER.Find(id);
+            List<SelectListItem> degerler = (from i in db.TBLKULUPLER.ToList()
+                                             select new SelectListItem
+                                             {
+                                                 Text = i.KULUPAD,
+                                                 Value = i.KULUPID.ToString()
+                                             }
+                                             ).ToList();
+            ViewBag.dgr = degerler;
             return View("OgrenciGetir", ogrenci);
         }
         public ActionResult Guncelle(TBLOGRENCILER p)
